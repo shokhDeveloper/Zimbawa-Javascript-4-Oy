@@ -22,7 +22,7 @@ const products = [
       width: 235,
       height: 100
     },
-    isFavorite: false,
+    isFavorite: true,
     features: ""
   },
   {

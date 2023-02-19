@@ -22,7 +22,7 @@
     <div class="row mt-5">
       <div class="col-3">
         <h2 class="h4 mb-4">Filter</h2>
-        <form action="#">
+        <form action="#" class="form_zimbawa">
           <div class="mb-3">
             <label for="search" class="form-label">Search</label>
             <input type="search" class="form-control" id="search" placeholder="Falonchi">
@@ -65,12 +65,13 @@
 
           <div class="mb-3">
             <label for="sortby" class="form-label">Sort by</label>
-            <select class="form-select" id="sortby">
-              <option value="1">Name</option>
-              <option value="2">Price: to lowest</option>
-              <option value="3">Price: to highest</option>
-              <option value="3">Birth: to highest</option>
-              <option value="3">Birth: to lowest</option>
+            <select class="form-select" id="sortby" >
+              <option value="Sorts" selected disabled>Sorts</option>
+              <option value="name">Name</option>
+              <option value="price_lowest">Price: to lowest</option>
+              <option value="price_hightes">Price: to highest</option>
+              <option value="birth_heights">Birth: to highest</option>
+              <option value="birth_lowes">Birth: to lowest</option>
             </select>
           </div>
 
@@ -83,17 +84,16 @@
           <h2 class="h4 mb-4">Parrots list</h2>
           <p>Count: 2</p>
         </div>
-
-        <ul class="row list-unstyled g-3 parrots-wrapper">
+        <template>
           <li class="col-6">
             <div class="card">
               <img src="https://media.istockphoto.com/photos/parrot-hyacinth-macaw-picture-id1359443019?b=1&k=20&m=1359443019&s=170667a&w=0&h=dteRZ9bM7sEvBbFE9it1r9O7IxlILXb1UnSoLNEVMAg=" alt="" class="card-img-top">
               <div class="card-body">
                 <h3 class="card-title">Hyacinth macaw</h3>
-                <p class="card-text fw-bold"><mark>$5000</mark></p>
-                <p class="badge bg-success">184sm x 50sm</p>
+                <p class="card-text price fw-bold"><mark>$5000</mark></p>
+                <p class="badge width_height bg-success">184sm x 50sm</p>
 
-                <p class="card-text">12.05.2022</p>
+                <p class="card-text  birthDate">12.05.2022</p>
 
                 <ul class="d-flex flex-wrap list-unstyled">
                   <li class="badge bg-primary me-1 mb-1">Beautiful</li>
@@ -103,46 +103,33 @@
 
                 <div class="position-absolute top-0 end-0 d-flex">
                   <!-- Agar isFavorite false bo'ladigan bo'lsa i'ning classi "fa-solid fa-star" bo'lishi kerak. Agar unday bo'lmasa "fa fa-star-o" -->
-                  <button class="btn rounded-0 btn-success"><i class="fa fa-star-o" style="color: yellow; pointer-events: none;"></i></button>
+                  <button class="btn rounded-0 btn-success icon_button">
+                    <i class="fa fa-star-o text-warning star"></i>
+                  </button>
                   <button class="btn rounded-0 btn-secondary"><i class="fa-solid fa-pen" style="pointer-events: none;"></i></button>
-                  <button class="btn rounded-0 btn-danger"><i class="fa-solid fa-trash" style="pointer-events: none;"></i></button>
+                  <button class="btn rounded-0 btn-danger delete_zimbawa"><i class="fa-solid fa-trash" style="pointer-events: none;"></i></button>
                 </div>
               </div>
             </div>
           </li>
-          <li class="col-6">
-            <div class="card">
-              <img src="https://media.istockphoto.com/photos/amazon-rainforest-parrot-macaw-picture-id1197182594?b=1&k=20&m=1197182594&s=170667a&w=0&h=bBQfSDgofCr_w2DBf79cwQe-JA45i02vCv7Ttx5qcmU=" alt="" class="card-img-top">
-              <div class="card-body">
-                <h3 class="card-title">Qizil Ara</h3>
-                <p class="card-text fw-bold"><mark>$1200</mark></p>
-                <p class="badge bg-success">184sm x 50sm</p>
+        </template>
+                <!-- Agar isFavorite false bo'ladigan bo'lsa i'ning classi "fa-solid fa-star" bo'lishi kerak. Agar unday bo'lmasa "fa fa-star-o" -->
 
-                <p class="card-text">12.05.2022</p>
-
-                <ul class="d-flex flex-wrap list-unstyled">
-                </ul>
-
-                <div class="position-absolute top-0 end-0 d-flex">
-                  <!-- Agar isFavorite false bo'ladigan bo'lsa i'ning classi "fa-solid fa-star" bo'lishi kerak. Agar unday bo'lmasa "fa fa-star-o" -->
-                  <button class="btn rounded-0 btn-success"><i class="fa-solid fa-star" style="color: yellow; pointer-events: none;"></i></button>
-                  <button class="btn rounded-0 btn-secondary"><i class="fa-solid fa-pen" style="pointer-events: none;"></i></button>
-                  <button class="btn rounded-0 btn-danger"><i class="fa-solid fa-trash" style="pointer-events: none;"></i></button>
-                </div>
-              </div>
-            </div>
-          </li>
+        <ul class="row list-unstyled g-3 parrots-wrapper">
+          
         </ul>
       </section>
-
+      <template class="locals_template">
+        <li class="card p-3 mb-2">
+          <h3 class="card-title h5 mb-2 name_locals">Qizil Ara</h3>
+          <button class="btn btn-danger btn-sm d-inline remove_btn" style="width: fit-content" type="button">Remove</button>
+        </li>
+      </template>
       <section class="col-3">
         <h2 class="h4 mb-4">Favorite parrots</h2>
 
-        <ul class="list-unstyled">
-          <li class="card p-3 mb-2">
-            <h3 class="card-title h5 mb-2">Qizil Ara</h3>
-            <button class="btn btn-danger btn-sm d-inline" style="width: fit-content" type="button">Remove</button>
-          </li>
+        <ul class="list-unstyled locals_ul">
+          
         </ul>
       </section>
     </div>
@@ -156,7 +143,7 @@
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body">
-          <form>
+          <form class="secondForm">
             <div class="mb-3">
               <label for="parrot-title" class="form-label">Title</label>
               <input type="search" class="form-control" id="parrot-title" placeholder="Kakatu">
@@ -198,7 +185,7 @@
   </div>
 
   <script src="js/bootstrap.bundle.min.js"></script>
-
+  <script src="./js/utils.js"></script>
   <script src="js/data.js"></script>
   <script src="js/main.js"></script>
 </body>
